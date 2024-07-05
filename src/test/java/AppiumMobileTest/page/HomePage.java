@@ -9,6 +9,9 @@ public class HomePage extends BaseTest {
 
 // Locator
     By productBanner = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
+    By filterButton = AppiumBy.accessibilityId("test-Modal Selector Button");
+    By itemSortList = By.xpath("//android.widget.ScrollView[@content-desc='Selector container']");
+    By lowToHigh = By.xpath("//android.widget.TextView[@text='Price (low to high)']");
 
     public void validateOnPage() {
         wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("test-Cart")));

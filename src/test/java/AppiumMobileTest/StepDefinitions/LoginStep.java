@@ -3,12 +3,10 @@ package AppiumMobileTest.StepDefinitions;
 import AppiumMobileTest.BaseTest;
 import AppiumMobileTest.page.LoginPage;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-
 import static org.testng.Assert.assertEquals;
 
 public class LoginStep extends BaseTest {
