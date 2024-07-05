@@ -10,5 +10,6 @@ public class HomeStep {
     @Then("user is on homepage")
     public void userIsOnHomepage() {
         homePage.validateOnPage();
+        homePage.productBannerDisplay();
     }
 }

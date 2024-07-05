@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class HomePage extends BaseTest {
 
 // Locator
-//    By productBanner = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
+    By productBanner = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     public void validateOnPage() {
         wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("test-Cart")));
@@ -22,9 +22,10 @@ public class HomePage extends BaseTest {
                                 text)));
     }
 // Action Method
-//    public void productBannerDisplay(){
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(productBanner)).getText();
-//    }
+
+    public void productBannerDisplay(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productBanner)).getText();
+    }
 
 
 }
