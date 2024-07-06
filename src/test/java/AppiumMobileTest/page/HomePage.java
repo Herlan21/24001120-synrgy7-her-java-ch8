@@ -24,13 +24,23 @@ public class HomePage extends BaseTest {
                                 "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"%s\"))",
                                 text)));
     }
-// Action Method
 
+// Action Method
     public void productBannerDisplay(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(productBanner)).getText();
     }
 
+    public void clickFilterButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(filterButton)).click();
+    }
 
+    public void setItemSortList(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(itemSortList));
+    }
+
+    public void itemLowHigh(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(lowToHigh));
+    }
 }
 
 
