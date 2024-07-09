@@ -32,7 +32,7 @@ public class LoginStep extends BaseTest {
     @And("user is on login page")
     public void userIsOnLoginPage() {
         loginPage = new LoginPage(driver);
-        loginPage.validateLoginPage(); // Ensure the login page is fully loaded
+        loginPage.validateLoginPage();
     }
 
     @And("user input username with {string}")
