@@ -13,3 +13,6 @@ Feature: Home Page
     And user select menu low to high filter
     Then user should see the items in low to high price order
 
+  Scenario: User Checkout selected items in the cart shopping
+    Given user add the product to the cart
+    And user

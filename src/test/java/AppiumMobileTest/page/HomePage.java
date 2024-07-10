@@ -20,6 +20,8 @@ public class HomePage extends BaseTest {
     By itemSortList = By.xpath("//android.widget.ScrollView[@content-desc='Selector container']");
     By lowToHigh = By.xpath("//android.widget.TextView[@text='Price (low to high)']");
     By itemPrice = By.xpath("//android.widget.TextView[@content-desc='test-Price' and @text='$7.99']");
+    By item1 = By.xpath("(//android.view.ViewGroup[@content-desc='test-ADD TO CART'])[1]");
+    By item2= By.xpath("(//android.view.ViewGroup[@content-desc='test-ADD TO CART'])[2]");
 
     public void swipeToElementWithText(String text) {
         driver.findElement(
