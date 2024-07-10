@@ -2,26 +2,25 @@ package AppiumMobileTest.StepDefinitions;
 
 import AppiumMobileTest.BaseTest;
 import AppiumMobileTest.page.LoginPage;
+import AppiumMobileTest.page.HomePage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LoginStep extends BaseTest {
 
     private LoginPage loginPage;
+    private HomePage homePage;
 
     // Initialize Driver
     @Before
     public void setup(){
-        setupDriver();
-    }
-
-    @After
-    public void tearDown(){
-        resetApp();
+        loginPage = new LoginPage(driver);
     }
 
     // Steps
@@ -31,7 +30,7 @@ public class LoginStep extends BaseTest {
 
     @And("user is on login page")
     public void userIsOnLoginPage() {
-        loginPage = new LoginPage(driver);
+
         loginPage.validateLoginPage();
     }
 
@@ -50,8 +49,14 @@ public class LoginStep extends BaseTest {
         loginPage.clickLoginButton();
     }
 
-    @And("user able to see message {string}")
-    public void userAbleToSeeMessageMessage(String message) {
+    @Then("user sees error message {string}")
+    public void userSeesErrorMessage(String message) {
         assertEquals(loginPage.getErrorMessage(), message);
     }
+
+//    @Then("user is on homepage")
+//    public void userIsOnHomepage() {
+//        homePage = new HomePage(driver);
+//        assertTrue(homePage.isHomePageDisplayed());
+//    }
 }

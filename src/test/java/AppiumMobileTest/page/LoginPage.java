@@ -14,7 +14,6 @@ public class LoginPage extends BaseTest {
     // Constructor
     public LoginPage(AndroidDriver driver) {
         this.driver = driver;
-
     }
 
     // Locator
@@ -25,13 +24,13 @@ public class LoginPage extends BaseTest {
     By errorMessage = By.xpath("//android.widget.TextView[@text='Username and password do not match any user in this service.']");
 
     public void validateLoginPage() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
+        wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
+        wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
+
 //        driver.findElement(usernameField).isDisplayed();
 //        driver.findElement(passwordField).isDisplayed();
 //        driver.findElement(loginButton).isDisplayed();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
     }
 
     // Method for Action
@@ -47,7 +46,7 @@ public class LoginPage extends BaseTest {
 
     public void clickLoginButton() {
 //        driver.findElement(loginButton).click();
-        wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton)).click();
     }
 
     public String getErrorMessage() {

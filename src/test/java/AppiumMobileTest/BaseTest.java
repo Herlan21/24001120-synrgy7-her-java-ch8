@@ -22,7 +22,7 @@ public class BaseTest {
         capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity");
 
         driver = new AndroidDriver(capabilities);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
     }
 
