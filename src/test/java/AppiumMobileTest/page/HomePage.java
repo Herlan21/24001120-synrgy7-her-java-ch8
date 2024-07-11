@@ -22,6 +22,8 @@ public class HomePage extends BaseTest {
     By itemPrice = By.xpath("//android.widget.TextView[@content-desc='test-Price' and @text='$7.99']");
     By item1 = By.xpath("(//android.view.ViewGroup[@content-desc='test-ADD TO CART'])[1]");
     By item2= By.xpath("(//android.view.ViewGroup[@content-desc='test-ADD TO CART'])[2]");
+    By shoppingCart = By.xpath("//android.view.ViewGroup[@content-desc='test-Cart']");
+    By checkoutButton = AppiumBy.accessibilityId("test-CHECKOUT");
 
     public void swipeToElementWithText(String text) {
         driver.findElement(
@@ -39,17 +41,22 @@ public class HomePage extends BaseTest {
         wait.until(ExpectedConditions.elementToBeClickable(filterButton)).click();
     }
 
-    public boolean setItemSortList(){
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(itemSortList)).isDisplayed();
-    }
-
     public void clickLowToHigh(){
         wait.until(ExpectedConditions.elementToBeClickable(lowToHigh)).click();
+    }
+
+    public void clickShoppingCart(){
+        wait.until(ExpectedConditions.elementToBeClickable(shoppingCart)).click();
+    }
+
+    public boolean setItemSortList(){
+       return wait.until(ExpectedConditions.visibilityOfElementLocated(itemSortList)).isDisplayed();
     }
 
     public boolean verifyItemsSortedLowToHigh(){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(itemPrice)).isDisplayed();
     }
+
     // Method to check if home page is displayed
 //    public boolean isHomePageDisplayed() {
 //        return wait.until(ExpectedConditions.visibilityOfElementLocated(productBanner)).isDisplayed();
